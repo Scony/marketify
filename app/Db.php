@@ -1,4 +1,5 @@
 <?php
+require_once('config.php');
 
 /* TODO: exceptions in bind */
 
@@ -17,7 +18,7 @@ class Db
 			   Settings::host,
 			   Settings::user,
 			   Settings::password,
-			   Settings::base,
+			   Settings::base
 			   );
     if(self::$db->connect_error)
       throw new Exception('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());

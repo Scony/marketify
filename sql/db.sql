@@ -1,4 +1,4 @@
-create database webify;
+create database marketify;
 
 create table recipes (
        id int not null auto_increment primary key,
