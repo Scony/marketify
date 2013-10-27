@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# -eq 1 ];
+then
+    # clean
+    rm -f recipe.jar
+    # build
+    javac -cp ify.jar:android.jar $1.java || exit 1
+    jar cf tmp.jar $1.class
+    ./dx --dex --output=classes.dex tmp.jar
+    jar cf recipe.jar $1.class classes.dex
+    # post-clean
+    rm -f *.class
+    rm -f classes.dex
+    rm -f tmp.jar
+    rm -f *.java
+    exit 0
+else
+    echo 'Usage: ./build.sh [recipe class name without .java]'
+fi
