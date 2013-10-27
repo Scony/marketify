@@ -26,4 +26,16 @@ class Recipes
     Db::b('insert into recipes values (NULL,MD5(?),MD5(MD5(?)),?,MD5(MD5(MD5(?))))','iiii',array($rnd,$rnd,time(),$rnd));
   }
 
+  public static function upload()
+  {
+    /* put code in file *.java */
+    /* build it */
+    /* if succes (0) */
+    /* insert into db */
+    /* get id */
+    /* mv recipe to jar folder as id.jar */
+    /* else */
+    /* rm *java file */
+  }
+
 }

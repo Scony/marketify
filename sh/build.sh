@@ -17,4 +17,5 @@ then
     exit 0
 else
     echo 'Usage: ./build.sh [recipe class name without .java]'
+    exit 2
 fi
