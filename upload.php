@@ -1,16 +1,15 @@
 <?php
 require_once('./app/config.php');
 
-if(!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['code']))
-  var_dump(Recipes::upload($_POST['name'],$_POST['description'],$_POST['code']));
+$failure = true;
 
-?>
-<form action="" method="POST">
-  Class name:<br>
-  <input type="text" name="name"><br>
-  Description:<br>
-  <input type="text" name="description"><br>
-  Recipe code:<br>
-  <textarea name="code"></textarea><br>
-  <input type="submit">
-</form>
+if(!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['code']))
+  {
+    $re = Recipes::upload($_POST['name'],$_POST['description'],$_POST['code']);
+    if($re >= 0)
+      header('Location: recipe.php?id='.$re);
+  }
+else
+  unset($failure);
+
+include('./tmpl/upload.php');
