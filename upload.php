@@ -6,8 +6,11 @@ if(!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['cod
 
 ?>
 <form action="" method="POST">
+  Class name:<br>
   <input type="text" name="name"><br>
+  Description:<br>
   <input type="text" name="description"><br>
+  Recipe code:<br>
   <textarea name="code"></textarea><br>
   <input type="submit">
 </form>
