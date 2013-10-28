@@ -26,16 +26,25 @@ class Recipes
     Db::b('insert into recipes values (NULL,MD5(?),MD5(MD5(?)),?,MD5(MD5(MD5(?))))','iiii',array($rnd,$rnd,time(),$rnd));
   }
 
-  public static function upload()
+  public static function upload($name,$description,$code)
   {
-    /* put code in file *.java */
-    /* build it */
-    /* if succes (0) */
-    /* insert into db */
-    /* get id */
-    /* mv recipe to jar folder as id.jar */
-    /* else */
-    /* rm *java file */
+    file_put_contents('./sh/'.$name.'.java',$code);
+    exec('cd sh && ./build.sh '.$name,$out,$re);
+    if(!$re)			/* success */
+      {
+	Db::b('insert into recipes values (NULL,?,?,?,"")','ssi',array($name,$description,time()));
+	$ii = Db::ii();
+	Db::b('update recipes set url = ? where id = ?','si',array(Settings::root.'jar/recipe'.$ii.'.jar',$ii));
+	
+	exec('mv sh/recipe.jar jar/recipe'.$ii.'.jar');
+	/* exec('mv recipe.jar ../jar/recipe'.$ii.'.jar'); */
+
+	return $ii;
+      }
+    else			/* failure */
+      unlink('./sh/'.$name.'.java');
+
+    return -1;
   }
 
 }
