@@ -15,6 +15,7 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
+          <li><a href="./sh/update.php" target="_blank" class="btn-danger">UPADTE JAR</a></li>
           <li><a href="index.php">Home</a></li>
           <li><a href="explore.php">Explore</a></li>
           <li><a href="upload.php">Upload</a></li>
