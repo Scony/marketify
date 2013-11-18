@@ -5,11 +5,11 @@
       <div class="jumbotron">
 	<h2><b><?php echo $recipe['name']; ?></b></h2>
 	<p>
-	  <span class="glyphicon glyphicon-heart"></span>
-	  <span class="glyphicon glyphicon-heart"></span>
-	  <span class="glyphicon glyphicon-heart"></span>
-	  <span class="glyphicon glyphicon-heart"></span>
-	  <span class="glyphicon glyphicon-heart-empty"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	</p>
 	<p class="lead"><?php echo $recipe['description']; ?></p>
 	<p>
