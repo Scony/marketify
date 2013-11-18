@@ -3,7 +3,7 @@
       <div class="alert alert-danger"><center><h3><b>Error:</b> recipe not found</h3></center></div>
 <?php else: ?>
       <div class="jumbotron">
-	<h1><?php echo $recipe['name']; ?></h1>
+	<h2><b><?php echo $recipe['name']; ?></b></h2>
 	<p>
 	  <span class="glyphicon glyphicon-heart"></span>
 	  <span class="glyphicon glyphicon-heart"></span>
@@ -20,7 +20,14 @@
 	    </span>
 	  </div>
 	</p>
-        <p><a class="btn btn-lg btn-success" href="<?php echo $recipe['url']; ?>">Download <span class="glyphicon glyphicon-floppy-save"></span></a></p>
+        <p>
+	  <div class="btn-group btn-group-lg" style="width:100%;">
+	    <a class="btn btn-success" href="<?php echo $recipe['url']; ?>" style="width:50%;">Download <span class="glyphicon glyphicon-floppy-save"></span></a>
+	    <a class="btn btn-primary" href="#" style="width:50%;">Fork <span class="glyphicon glyphicon-share"></span></a>
+	  </div>
+	</p>
       </div>
+      <pre class="prettyprint"><?php echo htmlspecialchars($recipe['code']); ?>
+      </pre>
 <?php endif; ?>
 <?php require_once('footer.php'); ?>
