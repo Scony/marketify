@@ -1,8 +1,7 @@
 <?php require_once('header.php'); ?>
       <div class="jumbotron">
         <h1>Market API <span class="glyphicon glyphicon-cog"></span></h1>
-        <p class="lead">Market API is a highly configurable way to access JSONified market data. You can use it to build your own application.</p>
-        <p><a class="btn btn-lg btn-info" href="#info">Learn more <span class="glyphicon glyphicon-info-sign"></span></a></p>
+        <p class="lead">Market API is a highly configurable way to access JSONified market data. You can use it to build your own application</p>
       </div>
       
       <div class="row marketing" id="info">

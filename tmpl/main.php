@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>if{y} market&trade;</title>
-
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link href="./css/marketify.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="upload.html">Upload</a></li>
-	  <li><a href="api.html">API</a></li>
-        </ul>
-        <h3 class="text-muted">if{y} market&trade;</h3>
-      </div>
-
       <div class="jumbotron">
         <h1>Awesomeness
 	  <!-- <span class="glyphicon glyphicon-chevron-down"></span> -->
@@ -61,12 +36,3 @@
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
-
-      <div class="footer">
-        <p>&copy; Company 2013</p>
-      </div>
-
-    </div> <!-- /container -->
-
-  </body>
-</html>

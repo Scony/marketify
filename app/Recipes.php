@@ -20,6 +20,11 @@ class Recipes
     return count($re) ? $re[0] : array();
   }
 
+  public static function getAll()
+  {
+    return Db::f('select * from recipes order by add_ts desc');
+  }
+
   public static function addDummy()
   {
     $rnd = rand(1,10000);

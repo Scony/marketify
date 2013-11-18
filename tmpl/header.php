@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>if{y} market&trade;</title>
+    <title>if{y}&trade;</title>
 
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
 
@@ -20,11 +20,9 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="./sh/update.php" target="_blank" class="btn-danger">UPADTE JAR</a></li>
           <li><a href="explore.php">Recipes</a></li>
-          <li><a href="examples.php">Examples</a></li>
           <li><a href="upload.php">Upload</a></li>
 	  <li><a href="api.php">API</a></li>
         </ul>
-        <h3 class="text-muted"><a href="index.php" class="nil">if{y} market&trade;</a></h3>
+        <h3 class="text-muted"><a href="index.php" class="nil">if{y}&trade;</a></h3>
       </div>

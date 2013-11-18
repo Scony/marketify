@@ -3,7 +3,7 @@ create database marketify;
 create table recipes (
        id int not null auto_increment primary key,
        name varchar(64) not null,
-       description blob,
+       description blob not null,
        code blob not null,
        add_ts bigint not null,
        url varchar(255) not null
