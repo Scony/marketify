@@ -77,3 +77,13 @@ body {
     border-bottom: 0;
   }
 }
+
+/* links with no effects */
+.nil {
+    color: #999;
+}
+
+.nil:hover {
+    color: #999;
+    text-decoration: none;
+}

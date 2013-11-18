@@ -23,7 +23,7 @@ class Recipes
   public static function addDummy()
   {
     $rnd = rand(1,10000);
-    Db::b('insert into recipes values (NULL,MD5(?),MD5(MD5(?)),?,MD5(MD5(MD5(?))))','iiii',array($rnd,$rnd,time(),$rnd));
+    Db::b('insert into recipes values (NULL,MD5(?),MD5(MD5(?)),MD5(MD5(MD5(\'xxx\'))),?,MD5(MD5(MD5(MD5(?)))))','iiii',array($rnd,$rnd,time(),$rnd));
   }
 
   public static function upload($name,$description,$code)
@@ -32,12 +32,11 @@ class Recipes
     exec('cd sh && ./build.sh '.$name,$out,$re);
     if(!$re)			/* success */
       {
-	Db::b('insert into recipes values (NULL,?,?,?,"")','ssi',array($name,$description,time()));
+	Db::b('insert into recipes values (NULL,?,?,?,?,"")','sssi',array($name,$description,$code,time()));
 	$ii = Db::ii();
 	Db::b('update recipes set url = ? where id = ?','si',array(Settings::root.'jar/recipe'.$ii.'.jar',$ii));
 	
 	exec('mv sh/recipe.jar jar/recipe'.$ii.'.jar');
-	/* exec('mv recipe.jar ../jar/recipe'.$ii.'.jar'); */
 
 	return $ii;
       }
