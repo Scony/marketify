@@ -1,7 +1,7 @@
       <div class="jumbotron">
-        <h1>Recipe repository <span class="glyphicon glyphicon-th"></span></h1>
+        <h1>Examples <span class="glyphicon glyphicon-thumbs-up"></span></h1>
         <p class="lead">
-	  Our repository contains all recipes that ever existed. You can access all of them in order to download or to fork
+	  Examples are basic, well-commented recipes created by staff. Feel free to fork, learn and reuse.
 	</p>
       </div>
 
@@ -25,15 +25,3 @@
 <?php endif; ?>
         </tbody>
       </table>
-
-      <center>
-      <ul class="pagination pagination-lg">
-	<li><a href="#">&laquo;</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">&raquo;</a></li>
-      </ul>
-      </center>

@@ -3,10 +3,9 @@ require_once('./app/config.php');
 
 $recipe;
 
-if(isset($_GET['id']))
+if(isset($_GET['name']))
   {
-    $_GET['id'] = (int)$_GET['id'];
-    $recipe = Recipes::getRecipe($_GET['id']);
+    $recipe = Recipes::getOne($_GET['name']);
     if($recipe != array())
       $recipe = $recipe[0];
     else

@@ -3,14 +3,13 @@ require_once('../app/config.php');
 
 /* GET:
 
-id int - id of recipe
+name string - name of recipe
 
  */
 
-if(!empty($_GET['id']))
+if(!empty($_GET['name']))
   {
-    $_GET['id'] = (int)$_GET['id'];
-    echo json_encode(Recipes::getRecipe($_GET['id']));
+    echo json_encode(Recipes::getOne($_GET['name']));
   }
 else
   echo json_encode(array());

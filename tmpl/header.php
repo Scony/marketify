@@ -21,6 +21,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="explore.php">Recipes</a></li>
+          <li><a href="examples.php">Examples</a></li>
           <li><a href="upload.php">Upload</a></li>
 	  <li><a href="api.php">API</a></li>
         </ul>

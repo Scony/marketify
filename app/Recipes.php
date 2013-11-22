@@ -3,47 +3,66 @@
 class Recipes
 {
 
+  public static function isNameAvailable($name)
+  {
+    /* todo: uncomment (make excuse if staff) */
+    /* if(preg_match('/^Y/',$name)) */
+    /*   return false; */
+
+    $re = Db::b('select 1 from recipes where name = ?','s',array($name));
+
+    return count($re) ? false : true;
+  }
+
+  public static function exists($name)
+  {
+    $re = Db::b('select 1 from recipes where name = ?','s',array($name));
+
+    return (bool)count($re);
+  }
+
   public static function getNew($limit = 10)
   {
     $limit = (int)$limit;
-    return Db::b('select * from recipes order by add_ts desc limit ?','i',array($limit));
+    return Db::b('select * from recipes order by ts desc limit ?','i',array($limit));
   }
 
-  public static function getRecipe($id)
+  public static function getOne($name)
   {
-    return Db::b('select * from recipes where id = ?','i',array($id));
+    return Db::b('select * from recipes where name = ?','s',array($name));
   }
 
-  public static function getRandom()
+  public static function getRandom($limit = 1)
   {
-    $re = Db::f('select * from recipes order by rand() limit 1');
+    $re = Db::b('select * from recipes order by rand() limit ?','i',array($limit));
     return count($re) ? $re[0] : array();
   }
 
-  public static function getAll()
+  public static function getAll($start = 0, $count = 10)
   {
-    return Db::f('select * from recipes order by add_ts desc');
+    return Db::b('select * from recipes order by ts desc limit ?, ?','ii',array($start,$count));
   }
 
-  public static function addDummy()
+  public static function getExamples($start = 0, $count = 10)
   {
-    $rnd = rand(1,10000);
-    Db::b('insert into recipes values (NULL,MD5(?),MD5(MD5(?)),MD5(MD5(MD5(\'xxx\'))),?,MD5(MD5(MD5(MD5(?)))))','iiii',array($rnd,$rnd,time(),$rnd));
+    return Db::b('select * from recipes where name like \'Y%\' order by ts desc limit ?, ?','ii',array($start,$count));
   }
 
-  public static function upload($name,$description,$code)
+  public static function upload($description, $code, $forked = NULL)
   {
+    $name = Java::getClassName($code);
+    if(!self::isNameAvailable($name))
+      return -1;
+
     file_put_contents('./sh/'.$name.'.java',$code);
     exec('cd sh && ./build.sh '.$name,$out,$re);
     if(!$re)			/* success */
       {
-	Db::b('insert into recipes values (NULL,?,?,?,?,"")','sssi',array($name,$description,$code,time()));
-	$ii = Db::ii();
-	Db::b('update recipes set url = ? where id = ?','si',array(Settings::root.'jar/recipe'.$ii.'.jar',$ii));
+	Db::b('insert into recipes values (?,?,?,?,?,?)','ssssis',array($name,$forked,$description,$code,time(),Settings::root.'jar/'.$name.'.jar'));
 	
-	exec('mv sh/recipe.jar jar/recipe'.$ii.'.jar');
+	exec('mv sh/recipe.jar jar/'.$name.'.jar');
 
-	return $ii;
+	return $name;
       }
     else			/* failure */
       unlink('./sh/'.$name.'.java');

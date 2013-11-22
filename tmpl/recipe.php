@@ -23,7 +23,7 @@
         <p>
 	  <div class="btn-group btn-group-lg" style="width:100%;">
 	    <a class="btn btn-success" href="<?php echo $recipe['url']; ?>" style="width:50%;">Download <span class="glyphicon glyphicon-floppy-save"></span></a>
-	    <a class="btn btn-primary" href="#" style="width:50%;">Fork <span class="glyphicon glyphicon-share"></span></a>
+	    <a class="btn btn-primary" href="fork.php?name=<?php echo $recipe['name']; ?>" style="width:50%;">Fork <span class="glyphicon glyphicon-share"></span></a>
 	  </div>
 	</p>
       </div>
