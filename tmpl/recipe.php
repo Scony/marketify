@@ -5,11 +5,16 @@
       <div class="jumbotron">
 	<h2><b><?php echo $recipe['name']; ?></b></h2>
 	<p>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=1">
+	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 1 ? '' : '-empty'; ?>"></span></a>
+	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=2">
+	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 2 ? '' : '-empty'; ?>"></span></a>
+	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=3">
+	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 3 ? '' : '-empty'; ?>"></span></a>
+	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=4">
+	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 4 ? '' : '-empty'; ?>"></span></a>
+	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=5">
+	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 5 ? '' : '-empty'; ?>"></span></a>
 	</p>
 	<p class="lead"><?php echo $recipe['description']; ?></p>
 	<p>

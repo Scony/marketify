@@ -13,6 +13,9 @@
           <h3>Concrete recipe</h3>
           <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php</h4></a>
 	  <p>?name - string</p>
+
+          <h3>Random recipe</h3>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/random.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/random.php</h4></a>
 	</div>
       </div>
 <?php require_once('footer.php'); ?>

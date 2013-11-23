@@ -24,28 +24,49 @@ class Recipes
   public static function getNew($limit = 10)
   {
     $limit = (int)$limit;
-    return Db::b('select * from recipes order by ts desc limit ?','i',array($limit));
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by ts desc limit ?',
+		 'i',
+		 array($limit)
+		 );
   }
 
   public static function getOne($name)
   {
-    return Db::b('select * from recipes where name = ?','s',array($name));
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name = ? group by name',
+		 's',
+		 array($name)
+		 );
   }
 
   public static function getRandom($limit = 1)
   {
-    $re = Db::b('select * from recipes order by rand() limit ?','i',array($limit));
+    $re = Db::b(
+		'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by rand() limit ?',
+		'i',
+		array($limit)
+		);
+
     return count($re) ? $re[0] : array();
   }
 
   public static function getAll($start = 0, $count = 10)
   {
-    return Db::b('select * from recipes order by ts desc limit ?, ?','ii',array($start,$count));
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by coalesce(rate,0) desc, ts asc limit ?, ?',
+		 'ii',
+		 array($start,$count)
+		 );
   }
 
   public static function getExamples($start = 0, $count = 10)
   {
-    return Db::b('select * from recipes where name like \'Y%\' order by ts desc limit ?, ?','ii',array($start,$count));
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name like \'Y%\' group by name order by coalesce(rate,0) desc, ts asc limit ?, ?',
+		 'ii',
+		 array($start,$count)
+		 );
   }
 
   public static function upload($description, $code, $forked = NULL)
@@ -68,6 +89,18 @@ class Recipes
       unlink('./sh/'.$name.'.java');
 
     return -1;
+  }
+
+  public static function rate($name, $rate)
+  {
+    if(in_array($rate,array(1,2,3,4,5)) && count(Db::b('select 1 from recipes where name = ?','s',array($name))))
+      {
+  	try
+  	  {
+  	    Db::b('insert into rates values(?,?,?)','sis',array($name,$rate,$_SERVER['REMOTE_ADDR']));
+  	  }
+  	catch(Exception $e) {}
+      }
   }
 
 }

@@ -7,14 +7,11 @@ create table recipes (
        code blob not null,
        ts bigint not null,
        url varchar(255) not null
-       -- todo:
-       -- feature list
-       -- params
 );
 
 create table rates (
-       id int not null auto_increment primary key,
-       rid int not null references recipes(id),
+       recipe varchar(64) not null,
        rate tinyint not null,
-       ip varchar(15) not null
+       ip varchar(15) not null,
+       primary key(recipe,ip)
 );
