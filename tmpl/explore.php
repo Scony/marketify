@@ -28,12 +28,8 @@
 
       <center>
       <ul class="pagination pagination-lg">
-	<li><a href="#">&laquo;</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">&raquo;</a></li>
+<?php for($i = 1; $i <= $pc; $i++): ?>
+	<li<?php echo $i==$p ? ' class="active"' : '' ?>><a href="explore.php?p=<?php echo $i.'">'.$i; ?></a></li>
+<?php endfor; ?>
       </ul>
       </center>

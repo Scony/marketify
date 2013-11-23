@@ -1,5 +1,7 @@
 create database marketify;
 
+use marketify;
+
 create table recipes (
        name varchar(64) primary key,
        forked varchar(64),

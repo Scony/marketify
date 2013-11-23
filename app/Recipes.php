@@ -54,7 +54,7 @@ class Recipes
   public static function getAll($start = 0, $count = 10)
   {
     return Db::b(
-		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by coalesce(rate,0) desc, ts asc limit ?, ?',
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by coalesce(rate,0) desc limit ?, ?',
 		 'ii',
 		 array($start,$count)
 		 );
@@ -63,7 +63,7 @@ class Recipes
   public static function getExamples($start = 0, $count = 10)
   {
     return Db::b(
-		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name like \'Y%\' group by name order by coalesce(rate,0) desc, ts asc limit ?, ?',
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name like \'Y%\' group by name order by coalesce(rate,0) desc limit ?, ?',
 		 'ii',
 		 array($start,$count)
 		 );
