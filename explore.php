@@ -12,6 +12,4 @@ if($p < 0 || $p > $pc)
 
 $recipes = Recipes::getAll(($p-1)*$rpp,$rpp);
 
-include('./tmpl/header.php');
 include('./tmpl/explore.php');
-include('./tmpl/footer.php');

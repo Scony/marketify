@@ -1,3 +1,4 @@
+<?php require_once('header.php'); ?>
       <div class="jumbotron">
         <h1>Awesomeness
 	  <!-- <span class="glyphicon glyphicon-chevron-down"></span> -->
@@ -36,3 +37,4 @@
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
+<?php require_once('footer.php'); ?>

@@ -1,3 +1,4 @@
+<?php require_once('header.php'); ?>
       <div class="jumbotron">
         <h1>Examples <span class="glyphicon glyphicon-thumbs-up"></span></h1>
         <p class="lead">
@@ -25,3 +26,4 @@
 <?php endif; ?>
         </tbody>
       </table>
+<?php require_once('footer.php'); ?>

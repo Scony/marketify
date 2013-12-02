@@ -1,3 +1,4 @@
+<?php require_once('header.php'); ?>
       <div class="jumbotron">
         <h1>Recipe repository <span class="glyphicon glyphicon-th"></span></h1>
         <p class="lead">
@@ -33,3 +34,4 @@
 <?php endfor; ?>
       </ul>
       </center>
+<?php require_once('footer.php'); ?>

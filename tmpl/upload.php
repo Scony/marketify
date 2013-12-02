@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('upload_header.php'); ?>
 <?php if(isset($failure)): ?>
       <div class="alert alert-danger"><center><h3><b>Error:</b> can not process your code</h3></center></div>
 <?php endif; ?>
@@ -10,7 +10,7 @@
 	  <label>Description</label>
 	  <textarea name="description" style="height:100px;" class="form-control input-lg"><?php echo isset($fdescription) ? $fdescription : ''; ?></textarea>
 	  <label>Code</label>
-	  <textarea name="code" style="height:400px;" class="form-control input-lg"><?php echo isset($fcode) ? $fcode : ''; ?></textarea>
+	  <pre class="editor" data-editor-lang="java" style="height: 500px;"><?php echo isset($fcode) ? $fcode : ''; ?></pre>
 	  <hr>
 	  <button type="submit" class="btn btn-lg btn-block btn-success">Submit <span class="glyphicon glyphicon-floppy-open"></span></button>
 	</form>
