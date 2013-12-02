@@ -1,7 +1,7 @@
 $(function () {
 
     $('button[type="submit"]').mousedown(function () {
-	alert($('pre').text());
+	$('textarea[name="code"]').text(editor.getValue());
     });
 	
 });

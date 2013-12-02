@@ -10,9 +10,17 @@
 	  <label>Description</label>
 	  <textarea name="description" style="height:100px;" class="form-control input-lg"><?php echo isset($fdescription) ? $fdescription : ''; ?></textarea>
 	  <label>Code</label>
-	  <pre class="editor" data-editor-lang="java" style="height: 500px;"><?php echo isset($fcode) ? $fcode : ''; ?></pre>
+	  <textarea name="code" style="display:none;"></textarea>
+	  <pre id="editor"><?php echo isset($fcode) ? $fcode : ''; ?></pre>
 	  <hr>
 	  <button type="submit" class="btn btn-lg btn-block btn-success">Submit <span class="glyphicon glyphicon-floppy-open"></span></button>
 	</form>
       </div>
+
+      <script src="http://ace.c9.io/build/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+      <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/twilight");
+      editor.session.setMode("ace/mode/java");
+      </script>
 <?php require_once('footer.php'); ?>

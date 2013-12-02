@@ -7,12 +7,6 @@
     <title>if{y}&trade;</title>
 
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
-    <script src="http://eclipse.org/orion/editor/releases/3.0/built-editor.min.js"></script>
-    <script>
-      require(["orion/editor/edit"], function(edit) {
-      edit({className: "editor"});
-      });
-    </script>
 
     <script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
