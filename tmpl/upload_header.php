@@ -14,7 +14,6 @@
 
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/marketify.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://eclipse.org/orion/editor/releases/3.0/built-editor.css"/>
   </head>
 
   <body>

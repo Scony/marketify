@@ -18,8 +18,11 @@
       </div>
 
       <script src="http://ace.c9.io/build/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+      <script src="http://ace.c9.io/build/src-min/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
       <script>
+      ace.require("ace/ext/language_tools");
       var editor = ace.edit("editor");
+      editor.setOptions({enableBasicAutocompletion: true});
       editor.setTheme("ace/theme/twilight");
       editor.session.setMode("ace/mode/java");
       </script>
