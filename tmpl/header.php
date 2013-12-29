@@ -6,8 +6,6 @@
 
     <title>if{y}&trade;</title>
 
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
-
     <script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
 

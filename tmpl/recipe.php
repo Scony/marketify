@@ -17,14 +17,6 @@
 	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 5 ? '' : '-empty'; ?>"></span></a>
 	</p>
 	<p class="lead"><?php echo $recipe['description']; ?></p>
-	<p>
-	  <div class="input-group input-group-sm">
-	    <input class="form-control input-sm" type="text" value="<?php echo $recipe['url']; ?>">
-	    <span class="input-group-btn">
-              <button class="btn btn-default bnt-sm" type="button"><span class="glyphicon glyphicon-floppy-disk"></span></button>
-	    </span>
-	  </div>
-	</p>
         <p>
 	  <div class="btn-group btn-group-lg" style="width:100%;">
 	    <a class="btn btn-success" href="<?php echo $recipe['url']; ?>" style="width:50%;">Download <span class="glyphicon glyphicon-floppy-save"></span></a>
@@ -32,7 +24,15 @@
 	  </div>
 	</p>
       </div>
-      <pre class="prettyprint"><?php echo htmlspecialchars($recipe['code']); ?>
+      <pre id="editor"><?php echo htmlspecialchars($recipe['code']); ?>
       </pre>
+
+      <script src="http://ace.c9.io/build/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+      <script>
+      var editor = ace.edit("editor");
+      editor.setReadOnly(true);
+      editor.setTheme("ace/theme/twilight");
+      editor.session.setMode("ace/mode/java");
+      </script>
 <?php endif; ?>
 <?php require_once('footer.php'); ?>

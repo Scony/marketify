@@ -1,4 +1,4 @@
-<?php require_once('upload_header.php'); ?>
+<?php require_once('header.php'); ?>
 <?php if(isset($failure)): ?>
       <div class="alert alert-danger"><center><h3><b>Error:</b> can not process your code</h3></center></div>
 <?php endif; ?>
@@ -17,6 +17,7 @@
 	</form>
       </div>
 
+      <script src="./js/editor.js" type="text/javascript" charset="utf-8"></script>
       <script src="http://ace.c9.io/build/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
       <script src="http://ace.c9.io/build/src-min/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
       <script>
