@@ -4,10 +4,11 @@ require_once('../app/config.php');
 /* GET:
 
 page int - page number
+limit int - recipes limit per page
 
  */
 
-$limit = 10;
+$limit = !empty($_GET['limit']) ? (int)$_GET['limit'] > 0 ? (int)$_GET['limit'] : 10 : 10;
 
 if(!empty($_GET['page']))
   {

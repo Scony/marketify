@@ -11,8 +11,9 @@
 	  <p>{limit} - int - number of new recipes to fetch</p>
 
           <h3>All recipes</h3>
-          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php?page={page}</h4></a>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php?page={page}&limit={limit}</h4></a>
 	  <p>{page} - int - page number to fetch recipes from</p>
+	  <p>{limit} - int - number of recipes per page</p>
 
           <h3>Search</h3>
           <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/search.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/search.php?phrase={phrase}</h4></a>
