@@ -42,13 +42,11 @@ class Recipes
 
   public static function getRandom($limit = 1)
   {
-    $re = Db::b(
-		'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by rand() limit ?',
-		'i',
-		array($limit)
-		);
-
-    return count($re) ? $re[0] : array();
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by rand() limit ?',
+		 'i',
+		 array($limit)
+		 );
   }
 
   public static function getMatching($phrase)

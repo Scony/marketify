@@ -11,6 +11,14 @@ create table recipes (
        url varchar(255) not null
 );
 
+create table comments (
+       id int not null auto_increment primary key,
+       recipe varchar(64) not null,
+       comment blob not null,
+       name varchar(24),
+       ts bigint not null
+);
+
 create table rates (
        recipe varchar(64) not null,
        rate tinyint not null,

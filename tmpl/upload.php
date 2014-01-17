@@ -13,7 +13,7 @@
 	  <textarea name="code" style="display:none;"></textarea>
 	  <pre id="editor"><?php echo isset($fcode) ? $fcode : ''; ?></pre>
 	  <hr>
-	  <button type="submit" class="btn btn-lg btn-block btn-success">Submit <span class="glyphicon glyphicon-floppy-open"></span></button>
+	  <button type="submit" class="btn btn-lg btn-block btn-success">Submit <span class="glyphicon glyphicon-floppy-save"></span></button>
 	</form>
       </div>
 

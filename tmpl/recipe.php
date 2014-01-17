@@ -27,6 +27,38 @@
       <pre id="editor"><?php echo htmlspecialchars($recipe['code']); ?>
       </pre>
 
+      <br>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+	 <?php foreach($recipe['comments'] as $comment): ?>
+          <tr>
+	    <td><?php echo date("d.m.y H:i:s",$comment['ts']); ?></td>
+	    <td><?php echo htmlspecialchars($comment['name']); ?></td>
+	    <td><?php echo htmlspecialchars($comment['comment']); ?></td>
+          </tr>
+	 <?php endforeach; ?>
+        </tbody>
+      </table>
+
+      <div class="jumbotron">
+	<form action="" method="POST" style="text-align: left">
+	  <label>Comment</label>
+	  <textarea name="comment" style="height:100px;" class="form-control input-lg"></textarea>
+	  <label>Name</label>
+	  <input type="text" name="name" class="form-control input-lg">
+	  <hr>
+	  <button type="submit" class="btn btn-lg btn-block btn-success">Submit</button>
+	</form>
+      </div>
+
       <script src="http://ace.c9.io/build/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
       <script>
       var editor = ace.edit("editor");
