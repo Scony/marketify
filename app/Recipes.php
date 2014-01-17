@@ -51,10 +51,20 @@ class Recipes
     return count($re) ? $re[0] : array();
   }
 
+  public static function getMatching($phrase)
+  {
+    $phrase = '%'.$phrase.'%';
+    return Db::b(
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name having name like ? order by coalesce(avg(rate),0) desc',
+		 's',
+		 array($phrase)
+		 );
+  }
+
   public static function getAll($start = 0, $count = 10)
   {
     return Db::b(
-		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by coalesce(rate,0) desc limit ?, ?',
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe group by name order by coalesce(avg(rate),0) desc limit ?, ?',
 		 'ii',
 		 array($start,$count)
 		 );
@@ -63,7 +73,7 @@ class Recipes
   public static function getExamples($start = 0, $count = 10)
   {
     return Db::b(
-		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name like \'Y%\' group by name order by coalesce(rate,0) desc limit ?, ?',
+		 'select recipes.*, avg(rate) as rate from recipes left join rates on name=recipe where name like \'Y%\' group by name order by coalesce(avg(rate),0) desc limit ?, ?',
 		 'ii',
 		 array($start,$count)
 		 );

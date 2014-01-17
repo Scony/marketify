@@ -7,12 +7,20 @@
       <div class="row marketing" id="info">
 	<div class="col-lg-12">
           <h3>New recipes</h3>
-          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/new.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/new.php</h4></a>
-          <p>?limit - int</p>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/new.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/new.php?limit={limit}</h4></a>
+	  <p>{limit} - int - number of new recipes to fetch</p>
+
+          <h3>All recipes</h3>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipes.php?page={page}</h4></a>
+	  <p>{page} - int - page number to fetch recipes from</p>
+
+          <h3>Search</h3>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/search.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/search.php?phrase={phrase}</h4></a>
+	  <p>{phrase} - string - phrase to search through recipes</p>
 
           <h3>Concrete recipe</h3>
-          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php</h4></a>
-	  <p>?name - string</p>
+          <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/recipe.php?name={name}</h4></a>
+	  <p>{name} - string - full name of recipe to fetch</p>
 
           <h3>Random recipe</h3>
           <a href="http://ify.cs.put.poznan.pl/~scony/marketify/api/random.php"><h4>http://ify.cs.put.poznan.pl/~scony/marketify/api/random.php</h4></a>
