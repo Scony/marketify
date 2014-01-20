@@ -13,4 +13,26 @@ class Java
     return $xpl[1];
   }
 
+  public static function addReplaceImports($in)
+  {
+    $repl =  array(
+		  'import pl.poznan.put.cs.ify.api.*;',
+		  'import pl.poznan.put.cs.ify.api.exceptions.*;',
+		  'import pl.poznan.put.cs.ify.api.features.*;',
+		  'import pl.poznan.put.cs.ify.api.features.events.*;',
+		  'import pl.poznan.put.cs.ify.api.group.*;',
+		  'import pl.poznan.put.cs.ify.api.log.*;',
+		  'import pl.poznan.put.cs.ify.api.params.*;',
+		  'import pl.poznan.put.cs.ify.api.security.*;',
+		  'import pl.poznan.put.cs.ify.api.types.*;',
+		  );
+
+    $lines = explode("\n",$in);
+    for($i = 0; $i < count($lines); $i++)
+      if(in_array($lines[$i],$repl))
+	unset($lines[$i]);
+
+    return implode("\n",array_merge($repl,$lines));
+  }
+
 }

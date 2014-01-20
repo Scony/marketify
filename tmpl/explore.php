@@ -20,7 +20,7 @@
           <tr>
 	    <td><?php echo $recipe['rate'] ? number_format($recipe['rate'],2) : ''?></td>
             <td><a href="recipe.php?name=<?php echo $recipe['name']; ?>"><?php echo $recipe['name']; ?></a></td>
-            <td><?php echo $recipe['description']; ?></td>
+            <td><?php echo Utils::enshort($recipe['description']); ?></td>
           </tr>
 <?php endforeach; ?>
 <?php endif; ?>

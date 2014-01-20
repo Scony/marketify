@@ -79,6 +79,7 @@ class Recipes
 
   public static function upload($description, $code, $forked = NULL)
   {
+    $code = Java::addReplaceImports($code);
     $name = Java::getClassName($code);
     if(!self::isNameAvailable($name))
       return array('Class name is unavailable');
