@@ -1,7 +1,24 @@
 <?php
 require_once('../app/config.php');
 
-$users = array('scony','alx','mateusz','fisz','patryk','root','alxio');
+$users = array(
+	       'scony',
+	       'alx',
+	       'mateusz',
+	       'fisz',
+	       'patryk',
+	       'root',
+	       'alxio',
+	       'test1',
+	       'test2',
+	       'test3',
+	       'test4',
+	       'test5',
+	       'test6',
+	       'test7',
+	       'test8',
+	       'test9',
+	       );
 $in = file_get_contents('php://input');
 
 if(!empty($in))
