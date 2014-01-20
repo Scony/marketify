@@ -1,13 +1,19 @@
 <?php
 require_once('./app/config.php');
 
-$failure = true;
-
 if(!empty($_POST['description']) && !empty($_POST['code']))
   {
     $re = Recipes::upload($_POST['description'],$_POST['code'],!empty($_POST['forked']) ? $_POST['forked'] : NULL);
-    if($re != -1)
+    if(!is_array($re))
       header('Location: recipe.php?name='.$re);
+    else
+      {
+	$failure = $re;
+	$fdescription = htmlspecialchars($_POST['description']);
+	$fcode = htmlspecialchars($_POST['code']);
+	if(!empty($_POST['forked']))
+	  $fname = $_POST['forked'];
+      }
   }
 else
   {
@@ -19,8 +25,6 @@ else
 	$fdescription = htmlspecialchars($base[0]['description']);
 	$fcode = htmlspecialchars(str_replace($_POST['fname'],$_POST['nname'],$base[0]['code']));
       }
-
-    unset($failure);
   }
 
 include('./tmpl/upload.php');

@@ -1,6 +1,11 @@
 <?php require_once('header.php'); ?>
 <?php if(isset($failure)): ?>
       <div class="alert alert-danger"><center><h3><b>Error:</b> can not process your code</h3></center></div>
+      <div class="alert alert-danger">
+<?php foreach($failure as $line): ?>
+<?php echo htmlspecialchars($line).'<br>'; ?>
+<?php endforeach; ?>
+      </div>
 <?php endif; ?>
       <div class="jumbotron">
         <h1>Share your code <span class="glyphicon glyphicon-cloud-upload"></span></h1>

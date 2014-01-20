@@ -17,6 +17,7 @@ then
     rm -f *.java
     exit 0
 else
-    echo 'Usage: ./build.sh [recipe class name without .java]'
+    # echo 'Usage: ./build.sh [recipe class name without .java]'
+    echo 'Cannot find class that extends YReceipt'
     exit 2
 fi

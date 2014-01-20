@@ -81,10 +81,10 @@ class Recipes
   {
     $name = Java::getClassName($code);
     if(!self::isNameAvailable($name))
-      return -1;
+      return array('Class name is unavailable');
 
     file_put_contents('./sh/'.$name.'.java',$code);
-    exec('cd sh && ./build.sh '.$name,$out,$re);
+    exec('cd sh && ./build.sh '.$name.' 2>&1',$out,$re);
     if(!$re)			/* success */
       {
 	Db::b('insert into recipes values (?,?,?,?,?,?)','ssssis',array($name,$forked,$description,$code,time(),Settings::root.'jar/'.$name.'.jar'));
@@ -96,7 +96,7 @@ class Recipes
     else			/* failure */
       unlink('./sh/'.$name.'.java');
 
-    return -1;
+    return $out;
   }
 
   public static function rate($name, $rate)
