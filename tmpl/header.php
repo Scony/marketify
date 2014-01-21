@@ -21,6 +21,7 @@
           <li><a href="explore.php">Recipes</a></li>
           <li><a href="examples.php">Examples</a></li>
           <li><a href="upload.php">Upload</a></li>
+          <li><a href="doc" target="_blank">Doclava</a></li>
 	  <li><a href="api.php">API</a></li>
         </ul>
         <h3 class="text-muted"><a href="index.php" class="nil">if{y}&trade;</a></h3>
