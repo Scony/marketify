@@ -29,8 +29,11 @@ class Java
 
     $lines = explode("\n",$in);
     for($i = 0; $i < count($lines); $i++)
-      if(in_array($lines[$i],$repl))
-	unset($lines[$i]);
+      if(in_array(trim($lines[$i]),$repl))
+	{
+	  echo 'OK';
+	  unset($lines[$i]);
+	}
 
     return implode("\n",array_merge($repl,$lines));
   }
