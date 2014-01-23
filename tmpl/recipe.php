@@ -3,7 +3,12 @@
       <div class="alert alert-danger"><center><h3><b>Error:</b> recipe not found</h3></center></div>
 <?php else: ?>
       <div class="jumbotron">
-	<h2><b><?php echo $recipe['name']; ?></b></h2>
+	<h2>
+<?php if(!$recipe['safe']): ?>
+	  <span class="glyphicon glyphicon-warning-sign"></span>
+<?php endif; ?>
+	  <b><?php echo $recipe['name']; ?></b>
+	</h2>
 	<p>
 	  <a href="recipe.php?name=<?php echo $recipe['name']; ?>&rate=1">
 	    <span class="glyphicon glyphicon-star<?php echo round($recipe['rate']) >= 1 ? '' : '-empty'; ?>"></span></a>

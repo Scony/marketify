@@ -8,6 +8,7 @@ create table recipes (
        description blob not null,
        code blob not null,
        ts bigint not null,
+       safe tinyint not null,
        url varchar(255) not null
 );
 

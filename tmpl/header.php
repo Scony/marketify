@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>if{y}&trade;</title>
+    <title>if{y}</title>
 
     <script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
@@ -24,5 +24,5 @@
           <li><a href="doc" target="_blank">Doclava</a></li>
 	  <li><a href="api.php">API</a></li>
         </ul>
-        <h3 class="text-muted"><a href="index.php" class="nil">if{y}&trade;</a></h3>
+        <h3 class="text-muted"><a href="index.php" class="nil">if{y}</a></h3>
       </div>

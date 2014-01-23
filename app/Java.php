@@ -35,4 +35,18 @@ class Java
     return implode("\n",array_merge($repl,$lines));
   }
 
+  public static function isSafe($in)
+  {
+    $dangers = array(
+		     'android.',
+		     'java.lang.Class.',
+		     );
+    
+    foreach($dangers as $danger)
+      if(strpos($in,$danger) !== false)
+	return false;
+
+    return true;
+  }
+
 }

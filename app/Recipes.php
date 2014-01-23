@@ -88,7 +88,10 @@ class Recipes
     exec('cd sh && ./build.sh '.$name.' 2>&1',$out,$re);
     if(!$re)			/* success */
       {
-	Db::b('insert into recipes values (?,?,?,?,?,?)','ssssis',array($name,$forked,$description,$code,time(),Settings::root.'jar/'.$name.'.jar'));
+	Db::b(
+	      'insert into recipes values (?,?,?,?,?,?,?)','ssssiis',
+	      array($name,$forked,$description,$code,time(),(int)Java::isSafe($code),Settings::root.'jar/'.$name.'.jar')
+	      );
 	
 	exec('mv sh/recipe.jar jar/'.$name.'.jar');
 
