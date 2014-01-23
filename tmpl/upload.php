@@ -9,7 +9,7 @@
 <?php endif; ?>
       <div class="jumbotron">
         <h1>Share your code <span class="glyphicon glyphicon-cloud-upload"></span></h1>
-        <p class="lead">If you have prepared your own recipe, you can upload its code and enjoy ready-to-go jar</p>
+        <p class="lead">If you'd like to prepare your own recipe, you can write it down right here</p>
 	<form action="" method="POST" style="text-align: left">
 	  <input type="hidden" name="forked" value="<?php echo isset($fname) ? $fname : ''; ?>">
 	  <label>Description</label>
