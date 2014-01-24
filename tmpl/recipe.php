@@ -5,7 +5,7 @@
       <div class="jumbotron">
 	<h2>
 <?php if(!$recipe['safe']): ?>
-	  <span class="glyphicon glyphicon-warning-sign"></span>
+	  <img src="./gfx/skull.png" width="48" height="48"/>
 <?php endif; ?>
 	  <b><?php echo $recipe['name']; ?></b>
 	</h2>
