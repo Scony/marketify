@@ -5,7 +5,7 @@ class Java
 
   public static function getClassName($code)
   {
-    $re = preg_match('/class [^ ]+ extends YReceipt/',$code,$matches);
+    $re = preg_match('/class [^ ]+ extends YRecipe/',$code,$matches);
     if($re != 1)
       return NULL;
 

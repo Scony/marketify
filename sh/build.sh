@@ -18,6 +18,6 @@ then
     exit 0
 else
     # echo 'Usage: ./build.sh [recipe class name without .java]'
-    echo 'Cannot find class that extends YReceipt'
+    echo 'Cannot find class that extends YRecipe'
     exit 2
 fi
